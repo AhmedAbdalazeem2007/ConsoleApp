@@ -1,0 +1,12 @@
+﻿global using System.Text;
+global using System.Globalization;
+global using System.Net;
+global using Microsoft.AspNetCore.Http;
+global using static System.Console;
+global using Python.Runtime;
+global using QRCoder;
+global using System.Drawing.Imaging;
+global using System.Drawing;
+global using System.Reflection;
+global using System.Text.Json.Serialization;
+global using System.Text.Json;

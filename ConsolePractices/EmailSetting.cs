@@ -1,5 +1,4 @@
-﻿using System.Net;
-
+﻿
 namespace ConsolePractices
 {
     public class EmailSetting

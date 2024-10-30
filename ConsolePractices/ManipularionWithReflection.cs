@@ -1,5 +1,4 @@
-﻿using System.Reflection;
-
+﻿
 namespace ConsolePractices;
 
 public class ManipularionWithReflection
@@ -11,7 +10,9 @@ public class ManipularionWithReflection
     }
     public void get()
     {
+        ManipularionWithReflection manipularion = new();
         var type = typeof(ManipularionWithReflection);
+        type = manipularion.GetType();
         Console.WriteLine(type);
         Console.WriteLine(type.Name);
         Console.WriteLine(type.Namespace);
@@ -61,6 +62,9 @@ public class ManipularionWithReflection
     {
         var properties = typeof(T).GetProperties();
         foreach (var m in properties)
-        { Console.WriteLine(m.Name); }
+        { 
+            Console.WriteLine(m.Name);
+            var p = m.PropertyType == typeof(string);
+        }
     }
 }

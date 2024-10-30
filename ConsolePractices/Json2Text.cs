@@ -1,6 +1,5 @@
 ﻿
-using System.Text.Json.Serialization;
-using System.Text.Json;
+
 namespace ConsolePractices;
 
 public class Json2Text
