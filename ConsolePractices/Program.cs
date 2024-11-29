@@ -212,6 +212,7 @@ internal class Program
 
         string dateString = "304-11-2024";
         DateTime? time=null;
+
         //DateTime dateTime = time.Value;
         Console.WriteLine(time.Value);
         //string format = "MM-dd-yyyy hh:mm tt";
