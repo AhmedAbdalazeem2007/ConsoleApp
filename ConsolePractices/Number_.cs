@@ -1,5 +1,4 @@
 ﻿
-
 namespace ConsolePractices;
 
 public static class Number_
@@ -7,29 +6,20 @@ public static class Number_
     public static void divisor(int num)
     {
         for (int i = 2; i <= num; i++)
-        {
             if (num % i == 0)
             {
                 Console.WriteLine(i);
                 num /= i;
                 i--;
             }
-        }
     }
-    public static bool is_positive(this int num)
-    {
-        return num >= 0;
-    }
-    public static bool is_negative(this int num)
-    {
-        return num < 0;
-    }
-
+    public static bool is_positive(this int num) => num >= 0;
+    public static bool is_negative(this int num) => num < 0;
     public static bool is_pow_2(this int num)
-    {
+    { 
         while (num > 1)
         {
-            if (!is_even(num))
+            if (num%2!=0)
                 return false;
             num /= 2;
         }
@@ -58,11 +48,6 @@ public static class Number_
             Console.WriteLine("no roots");
         return A;
     }
-    public static bool is_even(this int num)
-    {
-        return num % 2 == 0;
-    }
-
     public static int sum_even_n(this int num)
     {
         int sum = 0;
@@ -74,7 +59,7 @@ public static class Number_
     public static int sum_odd_n(this int num)
     {
         int sum = 0;
-        for (int i = 0; i <= num; i += 2)
+        for (int i = 1; i <= num; i += 2)
             sum += i;
         return sum;
     }
@@ -100,30 +85,13 @@ public static class Number_
         int s = reverse_num(a);
         return a * s == num;
     }
-
     public static bool is_palindrome(this int num)
     {
-        int x = reverse_num(num);
-        return num == x;
+        return num == reverse_num(num);
     }
-    public static bool is_abundant(int num)
-    {
-        return sum_of_divisors(num) > num;
-
-    }
-
-    public static bool is_deficient(this int num)
-    {
-        return sum_of_divisors(num) < num;
-
-    }
-
-    public static bool is_perfect(this int num)
-    {
-        return sum_of_divisors(num) == num;
-
-    }
-
+    public static bool is_abundant(int num) => sum_of_divisors(num) > num;
+    public static bool is_deficient(this int num) => sum_of_divisors(num) < num;
+    public static bool is_perfect(this int num) => sum_of_divisors(num) == num;
     public static bool is_disarium(this int num)
     {
         num = reverse_num(num);
@@ -141,7 +109,6 @@ public static class Number_
         a = reverse_num(a);
         return sum == a;
     }
-
     public static bool is_happy(this int num)
     {
         int b = 0;
@@ -549,7 +516,6 @@ public static class Number_
         }
         return count;
     }
-
     public static double value_E()
     {
         double e = 2;
@@ -575,8 +541,6 @@ public static class Number_
     public static int lcd(this int x, int y)
     {
         int z = 0;
-
-
         return z;
     }
 
@@ -616,9 +580,9 @@ public static class Number_
         while (num != 0)
         {
             int d = num % 10;
-            if (is_even(d))
+            if (d%2==0)
                 sum_even = sum_even + d;
-            if (!is_even(d))
+            if ( d%2!=0)
                 sum_odd = sum_odd + d;
             // if (prime(d))
             sum_prime = sum_prime + d;

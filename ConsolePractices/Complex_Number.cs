@@ -73,18 +73,13 @@ public class Complex_Number
     {
         return new Complex_Number(c1.real + c2.real, c1.img + c2.img);
     }
-    public static Complex_Number operator -(Complex_Number c1, Complex_Number c2)
-    {
-        return new Complex_Number(c1.real - c2.real, c1.img - c2.img);
-    }
-    public static Complex_Number operator ++(Complex_Number c1)
-    {
-        return new Complex_Number(c1.real + 1, c1.img);
-    }
-    public static Complex_Number operator --(Complex_Number c1)
-    {
-        return new Complex_Number(c1.real - 1, c1.img);
-    }
+    public static Complex_Number operator -(Complex_Number c1, Complex_Number c2) =>
+    new Complex_Number(c1.real - c2.real, c1.img - c2.img);
+    public static Complex_Number operator ++(Complex_Number c1) =>
+        new Complex_Number(c1.real + 1, c1.img);
+
+    public static Complex_Number operator --(Complex_Number c1) =>
+         new Complex_Number(c1.real - 1, c1.img);
     public static bool operator >(Complex_Number c1, Complex_Number c2)
     {
         if (c1.real == c2.real)
@@ -99,15 +94,10 @@ public class Complex_Number
         else
             return c1.real < c2.real;
     }
-    public static bool operator ==(Complex_Number c1, Complex_Number c2)
-    {
-        if ((c1.real == c2.real) && (c1.img == c2.img))
-            return true;
-        return false;
-    }
-
+    public static bool operator ==(Complex_Number c1, Complex_Number c2) =>
+         ((c1.real == c2.real) && (c1.img == c2.img));
     public static bool operator !=(Complex_Number c1, Complex_Number c2) =>
         ((c1.real != c2.real) && (c1.img != c2.img));
-
     public static explicit operator double(Complex_Number c1) => c1.real;
+
 }

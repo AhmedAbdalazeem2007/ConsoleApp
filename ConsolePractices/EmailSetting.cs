@@ -1,4 +1,6 @@
 ﻿
+using System.ComponentModel.DataAnnotations;
+
 namespace ConsolePractices
 {
     public class EmailSetting
@@ -25,6 +27,10 @@ namespace ConsolePractices
                 return addresses != null && addresses.Length > 0;
             }
             catch { return false; }
+        }
+        public bool isvalid(string email)
+        {
+            return new EmailAddressAttribute().IsValid(email);
         }
     }
 }

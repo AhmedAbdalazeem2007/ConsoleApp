@@ -17,6 +17,10 @@ public class BItManipulation
             num >>= 1;
         }
     }
+    public static string fromdicbin(int num)
+    {
+        return Convert.ToString(num, 2);
+    }
     public static int from_dic_bin(int num)
     {
         int s = 0;
@@ -45,6 +49,10 @@ public class BItManipulation
             num /= 8;
         }
         return s;
+    }
+    public static string fromdichex(int num)
+    {
+        return num.ToString("x");
     }
     public static int from_dic_hex(int num)
     {

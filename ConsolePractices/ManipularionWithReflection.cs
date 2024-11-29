@@ -1,4 +1,6 @@
 ﻿
+using Xunit;
+
 namespace ConsolePractices;
 
 public class ManipularionWithReflection
@@ -52,6 +54,8 @@ public class ManipularionWithReflection
             Console.WriteLine(t.FullName);
         }
     }
+    [Theory]
+    [InlineData]
     public void printAllmethodswithinclass<T>(T classexam)
     {
         var methods = typeof(T).GetMethods();

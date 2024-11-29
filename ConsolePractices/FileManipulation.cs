@@ -41,6 +41,7 @@ public static class FileManipulation
     {
         return new DirectoryInfo(path);
     }
+    public static string curentdir() => Directory.GetCurrentDirectory();
 
     public static FileInfo FileInfo(string path)
     {
@@ -92,7 +93,12 @@ public static class FileManipulation
     {
         return Path.GetExtension(formFile.FileName);
     }
-
+    public static string GetDirectoryOfExecutable()
+    {
+        var executablePath = Assembly.GetExecutingAssembly().Location;
+        var baseDirectory = Path.GetDirectoryName(executablePath);
+        return baseDirectory;
+    }
     public static void printdirinfo(string path)
     {
         var d2 = new DirectoryInfo(path);
@@ -112,9 +118,18 @@ public static class FileManipulation
         Console.WriteLine(d2.Exists);
         Console.WriteLine(d2.LastWriteTimeUtc + "\n\n\n");
         Console.WriteLine(d2.UnixFileMode);
+        Assembly theAssembly = Assembly.Load(new AssemblyName("VectorClass"));
+        //Attribute supportsAttribute = theAssembly.GetCustomAttribute(typeof(SupportsWhatsNewAttribute));
+        //foreach (Type definedType in theAssembly.ExportedTypes)
+        //{
+        //    DisplayTypeInfo(definedType);
+        //}
     }
     public static void print(string x)
     {
         Console.WriteLine(x);
     }
+    //WriteLine(FileManipulation.is_Directory("D:\\القران الكريم\\الشيخ محمدصديق المنشاوى"));
+    //    WriteLine(FileManipulation.is_File("D:\\القران الكريم\\الشيخ محمدصديق المنشاوى\\036.mp3"));
+     
 }

@@ -19,6 +19,20 @@ public class Sort_
             A[i] = swap;
         }
     }
+    public static void insertionsort<T>(T[] A)
+    {
+        for (int i = 1; i < A.Length; i++)
+        {
+            T key = A[i];
+            int j = i - 1;
+            while (j >= 0 && (comare_to(A[j], key) == 1))
+            {
+                A[j + 1] = A[j];
+                j = j - 1;
+            }
+            swap(ref A[j + 1], ref key);
+        }
+    }
     public static void selection_sort(int[] A)
     {
         int min = 0;
@@ -34,6 +48,23 @@ public class Sort_
             A[min] = A[i];
             A[i] = swap;
         }
+    }
+    public static int comare_to<T>(T a,T b)
+    {
+        if (typeof(T) == typeof(int))
+        {
+            string s1 = a.ToString();
+            int n1 = int.Parse(s1);
+            string s2 = b.ToString();
+            int n2 = int.Parse(s2);
+            if (n1 == n2)
+                return 0;
+            else if (n1 > n2)
+                return 1;
+            return -1;
+        }
+
+        return 0;
     }
     public static int comare_to(int x, int y)
     {
