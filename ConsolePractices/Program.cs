@@ -8,22 +8,22 @@ public sealed record Studentt
     }
     public Studentt(Studentt studentt)
     {
-        this.Id=studentt.Id;
-        this.Name=studentt.Name;
+        this.Id = studentt.Id;
+        this.Name = studentt.Name;
     }
     public Studentt(int id, string name)
     {
         this.Id = id;
         this.Name = name;
     }
-    public int Id { get;  }
+    public int Id { get; }
     public string Name { get; }
 }
 internal class Program
 {
     enum Grad
     {
-        A=1, B=2, C=3, D=4, E=5, F=6,
+        A = 1, B = 2, C = 3, D = 4, E = 5, F = 6,
     }
 
 
@@ -57,6 +57,9 @@ internal class Program
             }
         }
     }
+
+  
+
 
     private static IEnumerable<SearchResult> ExecuteSearch(string[] input, string[] patterns, bool sync)
     {
@@ -211,10 +214,9 @@ internal class Program
         Console.WriteLine(studentt1.Id);
 
         string dateString = "304-11-2024";
-        DateTime? time=null;
-
+        DateTime? time = null;
+        //Console.WriteLine(time.Value);
         //DateTime dateTime = time.Value;
-        Console.WriteLine(time.Value);
         //string format = "MM-dd-yyyy hh:mm tt";
         //Console.WriteLine(DateTime.Now.ToString(format));
         //string dateString = "30-11-2024";
